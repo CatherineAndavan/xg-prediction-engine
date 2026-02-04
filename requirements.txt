@@ -1,0 +1,9 @@
+statsbombpy
+xgboost
+scikit-learn
+pandas
+joblib
+fastapi
+uvicorn
+matplotlib
+seaborn
