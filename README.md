@@ -22,13 +22,29 @@ Along with situational features like 'is_header' or 'is_one_on_one', there is im
 <img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/248f54fd-e37f-45b8-850e-8de0ea9c5d96" />
 
 
-# 🛠 Setup & Usage  
-This repository follows a script-first approach to ensure reproducibility. Follow these steps to build the model:
+# 🏗 The Architecture (The "Why")
+This project is built as a Microservice. In a professional club environment, this API acts as the "Expected Goals Brain." It is designed to be called by other systems, such as:
 
-**Install Dependencies:** pip install -r requirements.txt
+**Live Match Trackers:** Consuming coordinate data to provide real-time xG during broadcasts.
 
-**Fetch Data:** python src/data_ingestion.py (Downloads 2022 WC data via StatsBomb API)
+**Scouting Databases:** Automatically evaluating thousands of shots from global leagues to find "clinical" strikers.
 
-**Train Model:** python src/train.py (Trains XGBoost to 0.7716 AUC)
+**Coaching Dashboards:** Providing post-match quality-of-chance reports.
 
-**Serve API:** uvicorn app:app --reload
+# 🛠 Tech Stack & MLOps
+**Modeling:** XGBoost (9-feature tactical engine).
+
+**Deployment:** FastAPI (High-performance Python API).
+
+**Infrastructure:** Docker (Containerized for "runs everywhere" reliability).
+
+**Environment:** GitHub Codespaces (Reproducible development).
+
+# 🚀 How to Run the Pipeline
+**Ingest Data:** python src/data_ingestion.py
+
+**Train Model:** python src/train.py
+
+**Launch Container:** docker build -t xg-app . && docker run -p 8000:8000 xg-app
+
+
