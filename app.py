@@ -17,8 +17,13 @@ model = joblib.load('models/xg_model.pkl')
 class ShotData(BaseModel):
     dist_center: float
     angle_deg: float
+    dist_left: float
+    dist_right: float
     is_header: int
     is_one_on_one: int
+    is_volley: int
+    is_corner: int
+    is_free_kick: int
 
 @app.get("/")
 def home():
