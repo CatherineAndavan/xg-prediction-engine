@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 5. Copying the rest of the project files
-COPY app.py src 01_eda .
+COPY app.py src .
 
 # 6. Exposing the port FastAPI will run on
 EXPOSE 8000
