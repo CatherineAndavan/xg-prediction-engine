@@ -22,11 +22,13 @@ Along with situational features like 'is_header' or 'is_one_on_one', there is im
 <img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/248f54fd-e37f-45b8-850e-8de0ea9c5d96" />
 
 
-### How to Run
-pip install -r requirements.txt
+# 🛠 Setup & Usage  
+This repository follows a script-first approach to ensure reproducibility. Follow these steps to build the model:
 
-python src/data_ingestion.py (Ingests 2022 WC Data)
+**Install Dependencies:** pip install -r requirements.txt
 
-python src/train.py (Trains model and saves to /models)
+**Fetch Data:** python src/data_ingestion.py (Downloads 2022 WC data via StatsBomb API)
 
-uvicorn app:app --reload (Starts the Prediction API)
+**Train Model:** python src/train.py (Trains XGBoost to 0.7716 AUC)
+
+**Serve API:** uvicorn app:app --reload
